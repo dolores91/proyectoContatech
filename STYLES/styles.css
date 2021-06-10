@@ -1,0 +1,450 @@
+:root{
+    --colorPrincipal: #e7bd98;
+    --colorContraste:rgb(55, 60, 88);
+    --colorBotones: #99AABF;
+    --colorTexto: black;
+    --fuentePrincipal: 'Patrick Hand', cursive;
+    --money: "$";
+}
+body{
+    height: 100%;
+
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 15% 8% 35% 35% 7%;
+    grid-template-areas: 
+    "header header header"
+    "nav nav nav"
+    "main main main"
+    "main main main"
+    "footer footer footer";
+}
+/*HEADER*/
+header { grid-area: header;
+display: grid;
+background-color: var(--colorPrincipal);
+font-family: var(--fuentePrincipal)
+
+}
+header > img{
+    display: grid;
+    grid-row: 1/4;
+    width: 30%;
+    margin: 2%;
+}
+header a img{
+    width: 48px;
+}
+header a img:hover{
+    border-style: solid;
+    border-color: var(--colorPrincipal);
+}
+header a {
+    grid-column-start: 3;
+    align-items: end;
+    display: grid;
+    justify-content: end;
+}
+/*NAV*/
+nav { grid-area: nav; 
+    background-color: var(--colorContraste) ;
+    text-align: center;
+    font-family: var(--fuentePrincipal);
+    padding: 2%;
+    font-size: 1.7rem;
+}
+#barra > a{
+    text-decoration: none;
+    color: var(--colorPrincipal);  
+    padding-left: 4%;
+    padding-right:4%;
+    }
+
+#barra > a:hover, a:active {
+    font-style:italic;
+    background-color: var(--colorBotones);
+    padding: 2.5%;
+}
+
+/*MAIN GENERAL*/ 
+main { grid-area: main; 
+    background-color: var(--colorPrincipal);
+    font-family: var(--fuentePrincipal);
+}
+/*FOOTER*/
+footer { grid-area: footer; 
+background-color: var(--colorContraste);
+text-align: center;
+font-family: var(--fuentePrincipal);
+align-items: center;
+color: var(--colorBotones);
+}
+footer img:hover{
+    border-style: solid;
+    border-color: var(--colorPrincipal);
+}
+footer img{
+    width: 9%;
+}
+footer p:first-child{
+    font-weight: bolder;
+    font-size: 1.3rem;
+    margin-top: 1%;
+}
+.diseñador{
+    text-align: center;
+    background-color: rgb(68, 68, 68);
+    color:white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    margin-bottom: 0px;
+}
+.diseñador img{
+    width: 4.5%;
+}
+/*INICIO*/
+.carousel-item {
+    margin-left: 15%;
+}
+.carousel-item img{
+    width: 65%;
+}
+/*COMO COMPRAR*/
+#comoComprar{
+    font-size: 1.2rem;
+    padding: 6%;
+    line-height: 160%;
+}
+/*CONTACTO*/
+#contacto{
+    color: var(--colorContraste);
+    font-size: 1.5rem;
+    margin-right: 10%;
+}
+form{
+    display: block;
+}
+#contacto p {
+    font-weight: bold;
+    text-align: center;
+}
+label{
+    margin-left: 5%;
+}
+input{
+    border-style: inset;
+    border-width: 3px;
+    border-radius: 15%;
+    display: block;
+    margin-left: 15%;
+    width: 20%;
+
+}
+input[type="checkbox"]{
+    margin-left: -6%;
+    margin-top: 5%;
+    transform: scale(140%);
+}
+input:focus{
+    background-color: lightblue;
+}
+input:checked {
+    box-shadow: 0 0 0 3px rgb(128, 236, 128);
+}
+textarea{
+    border-style: inset ;
+    border-width: 3px;
+    border-radius: 15%;
+    resize: none; 
+    font-size: 50%;
+    width: 20%;
+    margin-left: 15%;
+   }
+#contacto button{
+    border-radius: 15%;
+    cursor: pointer;
+    font-size: 90%;
+    text-align: center;
+    }
+button:hover {
+    background-color: var(--colorContraste); 
+}
+#contacto div{
+    margin-top: 4%;
+    margin-left: 35%;
+}
+#mapa{
+    margin-top: 5%;
+    margin-left: 70%;
+    text-align: right;
+}
+iframe{
+    margin-left: 70%;
+    margin-bottom: 5%;
+    margin-top: 2%;
+    width: 30%;
+    height: 45%;
+}
+
+/* CATALOGO */
+.grid-container-productos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 2px 2px;
+    grid-template-areas:
+      ". . ."
+      ". . ."
+      ". . ."
+      ". . ."
+      ". . .";
+  }
+.grid-container-productos{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.bloque--contado{
+    background-image: url("../ASSETS/fondoDescuento.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+.bloque{
+    display: inline-table;
+}
+.bloque h1{
+    text-align: center;
+    color: var(--colorContraste);
+    font-weight: bold;
+    font-size:2rem;
+}
+.bloque a img{
+    width: 55px;
+}
+.bloque a img:hover{
+    border-style: solid;
+    background-color: var(--colorContraste);
+    animation: escalar 1s infinite;
+}
+.contado{
+    border-radius: 20%;
+    margin-left: 2%;
+    margin-top: 1%;
+}
+
+@keyframes escalar {
+    25% {
+        transform: scale(0.8);
+       
+    }
+
+    50% {
+        transform: scale(1.1);
+       
+    }
+    
+    75% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1.5);
+    } 
+}
+
+.bloque__imagen{
+display:flex;
+border-radius: 30px;
+margin:auto;
+
+}
+.bloque__opciones{
+    display:flex;
+margin:auto;
+}
+.bloque__precio{
+    background-color: var(--colorBotones);
+    padding-top: 3%;
+    padding-bottom: 3%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(37, 37, 94);
+   border-radius: 10%;
+   display:flex;
+margin:auto
+}
+.bloque__button{
+  display: block;
+align-items: flex-start;
+}
+/*MI CARRITO*/
+#productos{
+    color: var(--colorContraste);
+
+}
+#productos h1{
+    text-align: center;
+}
+
+#productos img{
+    border-style:groove;
+    width:20%;
+}
+.final{
+    margin-left: 50%;
+    margin-bottom: 3%;
+    margin-top: 2%;
+}
+
+
+
+
+
+
+/* RESPONSIVE DESIGN CELULAR*/
+@media only screen and (max-width: 400px) {
+.bloque h1{
+    font-size:1.5rem;
+    
+    }
+nav {
+    font-size: 0.7rem;
+    }
+footer p:first-child{
+    font-size: 0.8rem;
+    
+}
+footer p{
+    font-size: 0.8rem;
+}
+header a img{
+    width: 22px;
+}
+#comoComprar{
+    font-size: 0.8rem;
+    padding: 2%;
+    line-height: 160%;
+}
+#comoComprar img{
+    width: 40%;
+}
+#contacto{
+     font-size: 0.9rem;
+}
+#mapa{
+    margin-top: 5%;
+    margin-left: 10%;
+    text-align: center;
+}
+iframe{
+    margin-left: 50%;
+    margin-bottom: 5%;
+    margin-top: 2%;
+    height: 65px;
+}
+.final{
+    margin-left: 20%;
+}
+#productos h1{
+    font-size: 0.9rem;
+}
+input{
+    margin-left: 15%;
+    width: 100px;
+}
+textarea{
+    width: 100px;
+    margin-left: 15%;
+}
+.grid-container-productos {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 2px 2px;
+    grid-template-areas:
+        ". "
+        ". "
+        ". "
+        ". "
+        ". ";
+    }
+    
+}
+/* RESPONSIVE DESIGN TABLET*/
+@media only screen and (min-width: 400px) and (max-width: 900px) {
+nav {
+    font-size: 0.9rem;
+}
+header a img{
+    width: 32px;
+}
+#comoComprar{
+    font-size: 1rem;
+    padding: 4%;
+    line-height: 160%;
+}
+#comoComprar img{
+    width: 45%;
+}
+#contacto{
+    font-size: 1.1rem;
+}
+.final{
+    margin-left: 30%;
+}
+input{
+    margin-left: 15%;
+    width: 150px;
+}
+textarea{
+    width: 150px;
+    margin-left: 15%;
+   }
+iframe{
+    margin-left: 70%;
+    margin-bottom: 5%;
+    margin-top: 2%;
+    height: 100px;
+}
+.grid-container-productos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 2px 2px;
+    grid-template-areas:
+        ". ."
+        ". ."
+        ". ."
+        ". ."
+        ". .";
+    }
+}
+  /*
+@media only screen and (min-width: 1024px) and (max-width: 2500px) {
+    main {
+        background-color: black;
+    }
+
+/*
+
+@media only screen and (orientation: landscape) {
+      main {
+        background-color: red;
+      }
+      .grid-container-productos {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr ;
+        gap: 2px 2px;
+        grid-template-areas:
+          ". . . . ."
+          ". . . . ."
+          ". . . . ."
+                 ;
+      }
+  }
